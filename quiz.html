@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="icon" href="photos/quiz.png">
+</head>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* :root {
+
+    --accent-color: #6448ff;
+    --base-color: white;
+    --text-color: #2E2B41;
+    --input-color: #F3F0FF;
+    /* --text-color: #47663B; */
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 12pt;
+    color: var(--text-color);
+    color: #2e2b41ea;
+}
+body {
+    font-family: Poppins,'Segoe UI', sans-serif;
+    background-image: url(photos/alone.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures full viewport height */
+}
+.app {
+    /* background: #fff; */
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Added shadow for better contrast */
+    text-align: left; /* Ensures the text inside aligns to the left */
+}
+.header {
+    display: flex;
+    justify-content: space-between; /* Positions elements (title and timer) on opposite sides */
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+}
+.header h1 {
+    font-size: 25px;
+    color: #28a745;
+    font-weight: 600;
+    margin: 0;
+}
+
+.timer {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background: rgb(255, 78, 78);
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.timer:hover { 
+    background: rgb(255, 176, 5);
+}
+
+.quiz {
+    padding: 20px 0;
+}
+
+.quiz h2 {
+    font-size: 18px;
+    color: #28a745;
+    font-weight: 600;   
+}
+
+.result {
+    text-align: left; /* Ensures results are aligned to the left */
+}
+
+.btn {
+    background: #222;
+    color: #28a745;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #222;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#next-btn {
+    background: #60d401;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 6px;
+    cursor: pointer;
+    display: none;
+}
+
+#next-btn:hover {
+    background: #fff;
+    color: #222;
+}
+
+.selected {
+    background: #4fb64f; /* Highlight color (green) */
+    color: #fff;
+    border-color: #3cbb1d;
+}
+
+
+.modal-container {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: #fff;
+    color: #001e4d;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal h2 {
+    margin-bottom: 15px;
+}
+
+.modal p {
+    margin-bottom: 20px;
+}
+
+.modal button {
+    padding: 10px 20px;
+    background: #2575fc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background: #1b63d0;
+}
+
+</style>
+<body>
+    <div class="app">
+        <div class="header">
+            <h1>Enjoy Quiz</h1>
+            <div class="timer">01:59s left</div>
+        </div>
+        <div class="quiz">
+            <h2 id="question">Question goes here</h2>
+            <div id="answer-buttons">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+            <button id="next-btn">Next</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+<div class="modal-container" id="modal-container">
+    <div class="modal">
+        <h2>Quiz Completed!</h2>
+        <p>You have completed the quiz. Click "Submit" to see your result.</p>
+        <button id="submit-btn">Submit</button>
+    </div>
+</div>
+
+</body>
+
+<script src="quiz.js"></script>
+</html>

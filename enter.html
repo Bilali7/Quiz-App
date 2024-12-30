@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="icon" href="photos/quiz.png">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    :root {
+    --accent-color: #9aff48b7;
+    --base-color: white;
+    --text-color: #9aff48fa;
+    --input-color: #F3F0FF;
+    /* --text-color: #47663B; */
+}
+
+    * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+
+       html {
+        font-family: Poppins,'Segoe UI', sans-serif;
+        font-size: 12pt;
+        color: var(--text-color);
+        color: #9aff48b7;
+    }    
+       
+
+       body {
+        background-image: url(photos/alone.jpg);
+        background-size: cover;
+           min-height: 100vh;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           color: #9aff48;
+           padding: 15px;
+       }
+
+       .app {
+           color: #333;
+           width: 100%;
+           max-width: 400px;
+           padding: 30px 20px;
+           border-radius: 12px;
+           box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+           text-align: center;
+           position: relative;
+       }
+
+       h1 {
+           margin-bottom: 20px;
+           color: #60d401c5;
+           font-weight: 700;
+       }
+
+       .form-group {
+           margin-bottom: 15px;
+       }
+
+       .form-group input {
+           width: 100%;
+           padding: 12px;
+           background: #333;
+           border: 1px solid #ccc;
+           border-radius: 8px;
+           font-size: 16px;
+           outline: none;
+           text-align: center;
+           cursor: pointer;
+       }
+
+       .form-group input:hover {
+        background: #fff;
+       }
+
+       .form-group input::placeholder {
+           color: hsl(93, 100%, 42%);
+           font-size: 14px;
+       }
+
+       .form-group input:focus {
+           border-color: #9aff48;
+           box-shadow: 0 0 5px #9aff48  ;
+       }
+
+       button {
+           margin-top: 20px;
+           padding: 12px;
+           background: #60d401;
+           color: #fff;
+           border: none;
+           border-radius: 8px;
+           font-size: 16px;
+           font-weight: 500;
+           cursor: pointer;
+           transition: background 0.3s ease;
+       }
+
+       button:hover {
+           background: #fff;
+           color: #333;
+       }
+
+       button:active {
+           background: #333 ;
+       }
+
+       button:disabled {
+           background: #999;
+           cursor: not-allowed;
+       }
+
+       /* Loader styles */
+       .loader-container {
+           display: none; /* Initially hidden */
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background: rgba(0, 0, 0, 0.4); /* Slightly transparent */
+           z-index: 1000;
+           justify-content: center;
+           align-items: center;
+       }
+
+       .loader {
+           border: 6px solid #ccc;
+           border-top: 6px solid #2575fc;
+           border-radius: 50%;
+           width: 50px;
+           height: 50px;
+           animation: spin 1s linear infinite;
+       }
+
+       @keyframes spin {
+           0% {
+               transform: rotate(0deg);
+           }
+           100% {
+               transform: rotate(360deg);
+           }
+       }
+
+       /* Subtle blur effect */
+       .blurred {
+           filter: blur(3px); /* Reduced blur intensity */
+       }
+</style>
+<body>
+    <div class="app" id="app">
+        <h1>Student Data </h1>
+        <form id="student-form">
+            <div class="form-group">
+            <input type="text" placeholder="Name" id="name" required>
+            </div>
+            <div class="form-group">
+            <input type="text" placeholder="Roll Num" id="roll" required>
+            </div>
+            <div class="form-group">
+            <input type="number" placeholder="Enter Batch " id="batch" required>
+            </div>
+            <button id="start">Ready Bacha Log</button>
+        </form>
+    </div>
+
+    
+</body>
+<script src="enter.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>
